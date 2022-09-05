@@ -90,13 +90,13 @@ def main():
         guess = get_guess(missed_letters + correct_letters)
         if guess in secret_word:
             correct_letters += guess
-            found_all_letters = T
+            found_all_letters = True
             for i in range(len(secret_word)):
                 if secret_word[i] not in correct_letters:
                     found_all_letters = False
                     break
                 if found_all_letters:
-                    print(f'YES! The secret word in {secret_word}! YOU WIN!!!')
+                    print(f'YES! The secret word is {secret_word}! YOU WIN!!!')
                     is_done = True
         else:
             missed_letters += guess
