@@ -33,3 +33,28 @@ pygame.draw.line(window, BLU, (60, 60), (120, 60), 4)
 pygame.draw.line(window, BLU, (120, 60), (60, 120))
 pygame.draw.line(window, BLU, (60, 120), (120, 120), 4)
 
+# Draw blue circle onto surface
+pygame.draw.circle(window, BLU, (300, 50), 20, 0)
+
+# Draw a red ellipse onto the surface
+pygame.draw.ellipse(window, RED, (300, 250, 40, 80), 1)
+
+# DRaw the tests background rectangle onto the surface
+pygame.draw.rect(window, RED, (textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height + 40))
+
+# Get a pixel array of the surface
+pixArray = pygame.PixelArray(window)
+pixArray[480][380] = BLK
+del pixArray
+
+# Draw the test onto the surface
+window.blit(text, textRect)
+
+# Draw the window onto the screen
+pygame.display.update()
+
+while True:
+    for event in pygame.event.get():
+        if event.type == 'QUIT':
+            pygame.quit()
+            sys.exit()
