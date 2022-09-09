@@ -71,7 +71,7 @@ while True:
                 b['dir'] = DOWNRIGHT
             if b['dir'] == UPLEFT:
                 b['dir'] = UPRIGHT
-        if b['rect'].right < WIDTH:
+        if b['rect'].right > WIDTH:
             # The box has moved past the left side
             if b['dir'] == DOWNRIGHT:
                 b['dir'] = DOWNLEFT
@@ -81,5 +81,3 @@ while True:
         p.draw.rect(window, b['color'], b['rect'])
     p.display.update()
     time.sleep(0.02)
-                
-                
